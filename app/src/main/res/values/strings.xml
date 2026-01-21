@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Journal Personnel</string>
+    <string name="hint_titre">hint_titre\n</string>
 </resources>
