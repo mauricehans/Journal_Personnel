@@ -7,24 +7,24 @@
     android:padding="16dp"
     tools:context=".MainActivity">
 
-    <!-- Zone de Saisie : Titre -->
+    <!--  Titre -->
     <EditText
         android:id="@+id/etTitre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/hint_titre"
+        android:hint="titre"
         android:inputType="textPersonName" />
 
-    <!-- Zone de Saisie : Contenu -->
+    <!-- Contenu -->
     <EditText
         android:id="@+id/etContenu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/hint_contenu"
+        android:hint="contenu"
         android:inputType="textMultiLine"
         android:minLines="2" />
 
-    <!-- DatePicker : Mode Spinner pour gagner de la place -->
+    <!-- DatePicker -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -38,7 +38,7 @@
         android:calendarViewShown="false"
         android:datePickerMode="spinner" />
 
-    <!-- CheckBoxes pour les Tags (Alignés horizontalement) -->
+    <!-- CheckBoxes  -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -46,21 +46,24 @@
 
         <CheckBox
             android:id="@+id/cbPerso"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/tag_perso" />
+            android:layout_weight="1"
+            android:text="perso" />
 
         <CheckBox
             android:id="@+id/cbTravail"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/tag_travail" />
+            android:layout_weight="1"
+            android:text="travail" />
 
         <CheckBox
             android:id="@+id/cbVoyage"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/tag_voyage" />
+            android:layout_weight="1"
+            android:text="voyage" />
     </LinearLayout>
 
     <!-- Bouton Enregistrer -->
@@ -68,15 +71,15 @@
         android:id="@+id/btnEnregistrer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/btn_save" />
+        android:text="save" />
 
-    <!-- Liste des entrées (prend tout l'espace restant avec layout_weight) -->
+    <!-- Liste des entrées  -->
     <ListView
         android:id="@+id/listViewJournal"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
         android:layout_marginTop="10dp"
-        android:background="#F0F0F0"/>
+        android:layout_weight="1"
+        android:background="#F0F0F0" />
 
 </LinearLayout>

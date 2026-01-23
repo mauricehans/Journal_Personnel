@@ -1,24 +1,31 @@
 package com.example.journalpersonnel;
 
 import android.os.Bundle;
-
-import androidx.activity.EdgeToEdge;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import java.util.ArrayList;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+
+        // Test de la ListView
+        ArrayList<String> entrees = new ArrayList<>();
+        entrees.add("Test 1 - 23/01/2026");
+        entrees.add("Test 2 - Travail");
+        entrees.add("Test 3 - Voyage");
+
+        ListView listView = findViewById(R.id.listViewJournal);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(
+                this,
+                R.layout.item_journal,
+                R.id.tvItem,
+                entrees
+        );
+        listView.setAdapter(adapter);
     }
 }
